@@ -1,0 +1,36 @@
+extends layout
+block content
+  .content-wrapper
+    .row
+      .jumbotron.col-sm-3.col-md-push-1.profin(style="float:right;")
+        img.au_ava.img-thumbnail(src= auth_ava)
+        h2.au_name #{author}
+        br
+        hr
+        p= auth_desc
+      .jumbotron.col-md-8(style="float:left")
+        //temporary fix for trenchy because he's a fuck
+        -if(author === "mcgrumm2015")
+          h2.au_prof_articles John Grim's Articles
+        -else
+          h2.au_prof_articles #{author}'s Articles
+        hr
+        -var Articles = arr
+        each i in Articles
+         -var th_name = i.THREAD_NAME
+         -var th_cont = i.THREAD_CONTENT
+          .row
+            .col-md-12
+              a(href='/article/'+i.THREAD_ID)
+                h3= th_name
+              p
+                small= th_cont.replace(/<\/?[^>]+(>|$)/g, "").replace(/(?:&(?:[A-Za-z_:][\w:.-]*|\#(?:[0-9]+|x[0-9a-fA-F]+));)/gmi, "")
+              hr
+
+
+
+
+
+
+
+  

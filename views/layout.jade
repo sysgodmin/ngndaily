@@ -1,0 +1,60 @@
+doctype html
+head
+  meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+  script(type="text/javascript", src="/javascripts/jquery.js" )
+  script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js")
+  link(rel='stylesheet', type='text/css', href='/css/bootstrap.min.css')
+  link(rel='stylesheet', type='text/css', href='/css/bootstrap-override.css')
+  script(type="text/javascript", src="/javascripts/cookies.js")
+  script(type="text/javascript", src="/javascripts/bootstrap.min.js")
+  script(type="text/javascript", src="/javascripts/socket.io.js")
+  script(type="text/javascript", src="/javascripts/functions.js")
+  block head
+body
+ nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
+      .container-fluid
+        .mobile-nav-buttons
+          a(href= ref)
+            button#login-btn.btn.btn-warning.pull-right.login-btn(type='button') #{but_log}
+          a(href= reg.ref)
+            button#register-btn.btn.btn-primary.pull-right.login-btn(type='button') #{reg.but}
+
+        .navbar-header.collapsed
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', da ta-target='.navbar-collapse')
+            span.sr-only
+              Toggle Navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a(href='/').navbar-brand
+            img.logo(src="../imgs/logo.png")
+        .navbar-collapse.collapse
+          ul.nav.navbar-nav
+            li#home
+              a(href='/') Home
+            li#xbox
+              a(href='/categories') Categories
+            li#articles
+              a(href='/articles') Articles
+            -if(but_log === "Logout")
+              li#form
+                a(href="/form") Writer's panel
+            li.dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown')
+                | Other
+                span.caret
+              ul.dropdown-menu(role='menu')
+                li
+                  a(href='/handhelds') Handhelds
+                li
+                  a(href='/g') Tech General
+          .bootstrap-fix-bkg
+            a(href= ref)
+              button#login-btn.btn.btn-warning.pull-right.login-btn(type='button') #{but_log} 
+            a(href= reg.ref)
+              button#register-btn.btn.btn-primary.pull-right.login-btn(type='button') #{reg.but}
+
+script(type="text/javascript", src="/javascripts/marked.js")
+script(type="text/javascript", src="/javascripts/media_wh.js")
+
+block content

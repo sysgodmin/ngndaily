@@ -1,0 +1,19 @@
+extends layout
+block content
+  meta(name="page" content= page)
+  .content-wrapper
+      .row
+        form.jumbotron.col-md-6.col-md-push-3(method="post", action="/authorLogin")
+          h2 Login
+            p(style='color:red') Only authors can do that right now.
+          div.form-group
+            input.form-control#inputEmail(type="email", placeholder="Email" name="email")
+          div.form-group
+            input.form-control#inputPassword(type="password", placeholder="Password" name="password")
+          div.checkbox
+            label
+              input(type="checkbox")
+              |Remember me
+          button.btn.btn-primary(value="Login").
+            Login
+        p.error.col-md-7.col-md-push-4= error

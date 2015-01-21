@@ -1,0 +1,20 @@
+extends layout
+  block content
+    .content-wrapper
+      .row
+        .jumbotron.col-md-12
+          form#article-form(name='article-form', method='POST')
+            h1
+              | Write an Article
+              small Write and format your aticle!
+            input.col-md-12(type='text', name='title', placeholder='Article Title')
+            textarea.col-md-12(name='body-1', placeholder='introduction')
+            input.col-md-12(type='text', name='body-2-name', placeholder='Body Paragraph Header')
+            textarea.col-md-12(name='body-2', placeholder='First Body Paragraph')
+            input.col-md-12(type='text', name='body-3-name', placeholder='Body Paragraph 2 Header')
+            textarea.col-md-12(name='body-3', placeholder='Second Body Paragraph')
+            input.col-md-12(type='text', name='body-4-name', placeholder='Body Paragh 3 Header')
+            textarea.col-md-12(name='body-4', placeholder='Third Body Paragraph')
+            input.col-md-12(type='text', name='body-5-name', placeholder='Conclusion Header')
+            textarea.col-md-12(name='body-5', placeholder='Conclusion Paragraph')
+            input.btn.btn-primary.col-md-12(type='submit', value='Submit Article!')

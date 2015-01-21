@@ -1,0 +1,27 @@
+extends layout  
+block content
+  .content-wrapper
+    .row
+      .jumbotron.col-md-8.col-md-push-2
+        form#register(name='register' method="POST" action="/signup" enctype="multipart/formdata")
+          h1 Register
+            small.notice Create an account to access more features!
+          hr
+          div.form-group
+            input.col-md-12.firstname.form-control(type='text', name='firstname', placeholder='Firstname')
+            input.col-md-12.lastname.form-control(type='text', name='lastname', placeholder='Lastname')
+            input.col-md-12.handle.form-control(type='text', name='handle', placeholder='Author Handle')
+            input.col-md-12.email.form-control(type='text', name='email', placeholder='Email Address')
+            input.col-md-12.password.form-control(type='password', name='password', placeholder='Password')
+            input.col-md-12.confpassword.form-control(type='password', name='confirmpass', placeholder='Confirm Password')
+            div.input-group
+              span.input-group-btn 
+                span.btn.btn-primary.btn-file.btn-over User image&hellip;
+                  input#imglol.usrimg.imgfile(type='file' name="img")
+              input.usrimg.imgval.form-control(type="text" readonly)
+            br
+            button.btn.btn-primary.regsubmit.col-md-12(type='submit', value='Create Account' style="margin-top:5px") Create Account
+              span.glyphicon.glyphicon-refresh.glyphicon-refresh-animate.btn-load-ico(style="margin-left:10px")
+  script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js")
+  script(type="text/javascript" src="/javascripts/reg.js")
+

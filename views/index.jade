@@ -1,0 +1,51 @@
+extends layout
+block head
+  meta(name='page', content= page)
+  title NGN Daily
+  meta(description="Your one-stop neuitral gaming news portal")
+block content
+  .content-wrapper
+    .row
+      .jumbotron.col-md-6
+        h3= maintitle
+        p
+          small= secondtitle
+        p
+          a#login-btn.btn.btn-warning.pull-left.login-btn(href= mainbtnlink, role='button')= mainbtn
+        br
+      .jumbotron.col-md-4.pull-right
+        p
+          small Features
+        ul#onthewip
+          li
+            | Comments
+            span.label.pull-right.label-warning Work in Progress
+          li
+            | Bug fixes
+            span.label.pull-right.label-info Perfecting
+            br
+            li fix article images not formatting correctly (fucking bootstrap)
+          li
+            | Responsive UI
+            span.label.pull-right.label-info Almost done
+    .row
+      .jumbotron.col-md-6.rec_articles
+
+        h3 Recent Articles
+
+          if arr.Error
+            .row.col-md-12
+              p(style="font-size:18px; color:grey;")=arr.Error
+              small(style="font-size:14px; color:grey;")="Sorry :("
+          else
+            each i in arr
+              -var arID = i.THREAD_ID
+              -var artitle = i.THREAD_NAME
+              -var arBody = i.THREAD_CONTENT
+              .row.col-md-12
+              h3
+                a(href='/article/'+arID) #{artitle}
+              div
+                 small.index-article-desc= arBody.replace(/<\/?[^>]+(>|$)/g, "").replace(/(?:&(?:[A-Za-z_:][\w:.-]*|\#(?:[0-9]+|x[0-9a-fA-F]+));)/gmi, "")
+            hr
+

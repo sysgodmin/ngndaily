@@ -1,0 +1,41 @@
+extends layout
+block content
+  meta(name="page" content= id)
+  .content-wrapper
+    .row
+      .jumbotron.col-md-12
+        .article
+          .article-header
+            h3= title
+            small October 4. 2014
+            .media.pull-right
+              img.media-object.user-avatar.pull-right(src='/imgs/64user.svg', href='#')
+              a.pull-right(href='#')
+                | James Krause
+          .article-wrapper
+            hr
+            p= body
+            .comment-wrapper
+              span.glyphicon.glyphicon-chevron-up
+                a.pull-left(id="upv",href="#") Upvote
+              span.glyphicon.glyphicon-chevron-down
+                a.pull-left(id="dwnv",href="#") Downvote
+              h1 Comments
+              .comment-container.well
+                form(name='write-comment', method='POST')
+                  label(for='comment-content')
+                    | Write a Comment:
+                  textarea#comment-content.restrict-resize-vertical.comment-write
+                  .post-btn(name="comment-text")
+                    button.btn.btn-warning.login-btn(type='button' name="comm-login") Login to Comment
+                    | or
+                    button.btn.btn-success.login-btn(type='button' name="comm-anon") Post Anonymously
+              .comment-container.well
+                .media.pull-left
+                  img.media-object.user-avatar.pull-left(src='/imgs/64user.svg', href='#')
+                  a.pull-left(href='#')
+                    | Anonymous
+                .comment-well
+                  p
+                    | Donec tempus dui nec urna cursus vulputate quis a enim. Mauris eget erat condimentum, tincidunt nunc sit amet, vulputate ipsum. Duis est turpis, rutrum et vestibulum a, aliquam non tellus. Aenean cursus fringilla tortor, ac elementum lectus mollis nec. Duis eu placerat metus. Maecenas quis libero tempor, placerat nulla quis, pharetra est. Nunc et tellus lacus.
+  script(type="text/javascript" src="/javascripts/article_fn_js.js")

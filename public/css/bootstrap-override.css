@@ -1,0 +1,882 @@
+/* * Modified CSS of Bootstrap for NGN Daily
+*
+* 2014 James Krause
+*
+* Follows specificity guidelines to avoide
+* poor standards often associated with the
+* !important override parameter.
+*
+* DEVELOPMENT VERSION
+* DO NOT USE FOR PRODUCTION */
+
+/* Let's fix our core elements */
+
+/* Light font (buttons) */
+@font-face {
+	font-family:"SourceSansPro-Light";
+	src: url(../fonts/SourceSansPro-Light.otf);
+}
+/* Bold font (headers) */
+@font-face {
+	font-family:"SourceSansPro-Regular";
+	src: url(../fonts/SourceSansPro-Regular.otf);
+}
+body,
+html {
+	word-wrap:break-word;
+	background-color:#A2ADBC;
+	color:#727B84;
+	font-family:"SourceSansPro-Light";
+}
+/* Page logo */
+.logo {
+	width:30px;
+	height:30px;
+	max-width:30px;
+	max-height:30px;
+	margin-top:-5px;
+}
+.navbar-default > * {
+	background-color:#727B84;
+}
+.navbar-default .navbar-toggle {
+	border:none;
+	background-color: #707881;
+}
+.navbar-default .navbar-toggle:hover {
+	background-color:#889199;
+}
+h2, h3 {
+	font-family: "SourceSansPro-Regular";
+}
+/* Wrap out content so it's centered. */
+.wrapper,
+.content-wrapper,
+.content-wrapper .row .col-md-8 #register .content-wrapper-resize {
+	margin: 0 auto;
+	width: 50%;
+}
+.content-wrapper {
+	margin-top: 50px;
+	background-color: transparent;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+/* For fluid grid columns */
+.row {
+	margin-top: 5px;
+}
+.row .jumbotron {
+	margin-bottom: 0px;
+
+}
+
+/* Fix elements in the Navigation bar */
+.active {
+	background-color: #ecf0f1;
+}
+
+/* Light background on active list elements */
+.caret {
+	margin-left: 5px;
+}
+
+/* Fix the caret colliding with text */
+.navbar {
+	background-color: #343434;
+	max-height: 50px;
+}
+
+/* Theme the navbar,
+give it a max width to prevent it from resizing when our forms are toggled */
+.navbar-default {
+	border: 0;
+}
+
+/* Remove bottom border,
+in specific */
+.navbar-default .navbar-nav > li > a {
+	background-color: #727B84;
+	color:#F4F3EE;
+}
+
+/* Normal nav bar color */
+.navbar-default .navbar-nav > .active > a {
+	background-color: #A4BCC2;
+	color: #343434;
+}
+
+/* Active link light background */
+.navbar-default .navbar-nav > .active > a:hover {
+	background-color: #A4BCC2;
+}
+
+/* Set active link to dark text */
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+	color: white;
+	background-color:#A4BCC2;
+}
+
+/* Orange hover and active color for nav bar links */
+.navbar-default .navbar-nav > li > .dropdown-menu {
+	background-color: #81A8B8;
+	border: 0;
+}
+
+/* Remove borders that messed up alignment and set dark background to match nav bar */
+.navbar-default .navbar-nav > li .active > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+	color: white;
+}
+
+/* Font color white,
+because dark background */
+.navbar-default .navbar-nav > li > .dropdown-menu > li:hover > a {
+	color: #343434;
+}
+
+/* on hover font color light->dark */
+.login-btn {
+	margin-top: 7px;
+	margin-left: 5px;
+	z-index: 1000;
+	position: relative;
+	background-color: #DF9496;
+	border:none;
+}
+.login-btn:hover {
+	background-color: #DC878B;
+}
+/* Align these so they don't touch and are centered vertically */
+/* Customize the jumbotron elements,
+universally */
+.jumbotron {
+/*	display: inline-block;
+*/	height: auto;
+	margin-top: 10px;
+/*	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;*/
+
+
+	border: none;
+	background-color: #D9E2E1;
+
+}
+
+/* Border radius not working? Fixed */
+.jumbotron p {
+	padding: 0;
+}
+
+/* Save some space */
+/* Information Elements */
+.content-wrapper .row .jumbotron .wip ul li {
+	margin-top: 5px;
+}
+
+/* Give a good margin to informational list elements */
+/* Article Elements,
+includes comment and interaction well */
+.content-wrapper .row .col-md-12 .article {
+	position: relative;
+	padding:20px;
+}
+
+/* Fit to content */
+.content-wrapper .row .col-md-12 .article .article-header {
+	width: 100%;
+	float: left;
+}
+
+/* Align the article header so the article body fits correctly below */
+.content-wrapper .row .col-md-12 .article h3 {
+	position: relative;
+	float: left;
+	font-size: 36px;
+	width: 78%;
+	max-width: 78%;
+}
+
+/* Need a decent header font size */
+.content-wrapper .row .col-md-12 .article h3 small {
+	float: right;
+	font-size: 12px;
+	padding-top: 22px;
+	padding-left: 15px;
+}
+
+/* Align this correctly to the bottom of the h3 element */
+.content-wrapper .row .col-md-12 .article .media a {
+	padding-top: 30px;
+}
+
+/* Align this to the bottom of media-object img */
+.content-wrapper .row .col-md-12 .article .article-wrapper {
+	float: left;
+	width:100%;
+
+}
+
+/* Where the actual article content will go */
+.content-wrapper .row .col-md-12 .article .media {
+	position: relative;
+	margin-right: 0;
+}
+
+/* The media-object element for user avatar and name */
+.content-wrapper .row .col-md-12 .article .comment-wrapper,
+.content-wrapper .row .col-md-12 .article .comment-container {
+	float: left;
+	width: 100%;
+}
+
+/* Same as the article header,
+basically. */
+.content-wrapper .row .col-md-12 .article .comment-wrapper .comment-container .restrict-resize-vertical {
+	resize: vertical;
+}
+
+/* Restrict form resizing to vertical only */
+.content-wrapper .row .col-md-12 .article .comment-wrapper .comment-well {
+	float: left;
+	width: 95%;
+}
+
+/* Comment container element */
+.content-wrapper .row .col-md-12 .article .comment-wrapper .comment-write {
+	float: left;
+	height: 150px;
+	width: 100%;
+}
+
+/* Comment text input */
+.content-wrapper .row .col-md-12 .article .comment-wrapper .post-btn button {
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+/* Fix text collision */
+.content-wrapper .row .col-md-12 .article .comment-wrapper .upvotes button {
+	text-align: left;
+	height: 30px;
+	padding: 5px;
+	margin-left: 5px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+/* Redesign upvote/downvote buttons */
+.content-wrapper .row .col-md-12 .article .comment-wrapper .upvotes .btn-success {
+	border: 1px solid #4CAE4C;
+}
+
+/* Fix button borders */
+.content-wrapper .row .col-md-12 .article .comment-wrapper .upvotes .btn-danger {
+	border: 1px solid #AC2925;
+}
+
+/* Fix button borders */
+.content-wrapper .row .col-md-12 .article .comment-wrapper .upvotes span p {
+	margin-left: -15px;
+	font-size: 12px;
+}
+
+/* Fix span positioning on buttons */
+/* Article Fonts */
+.content-wrapper .row .col-md-12 .article .article-wrapper h1 {
+	font-size: 24px;
+	word-wrap: break-word;
+}
+.content-wrapper .row .col-md-12 .article .article-wrapper h2 {
+	font-size: 20px;
+}
+.content-wrapper .row .col-md-12 .article .article-wrapper h3 {
+	font-size: 18px;
+}
+.content-wrapper .row .col-md-12 .article .article-wrapper h4 {
+	font-size: 16px;
+}
+.content-wrapper .row .col-md-12 .article .article-wrapper p {
+	font-size: 16px;
+	font-weight: 200;
+	text-indent: 30px;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+
+}
+.content-wrapper .row .col-md-12 .article .comment-wrapper .post-btn p {
+	text-indent: 0px;
+	text-align: center;
+	display: inline-block;
+}
+
+/*Article Images */
+.article-text img { 
+	max-width:500px;
+	min-width:200px;
+	max-height:450px;
+	min-height:150px;
+	white-space: none !important;
+	margin:0 auto;
+	display:inline-block;
+	border:3px solid #E3E3E3;
+	border-radius: 2px;
+}
+/* Article image caption */
+.article-tbl {
+	display: block;
+	margin:0 auto;
+	min-width:200px;
+	text-align: center;
+}
+.article-tbl > caption {
+	font-size:10px;
+	text-align: center;
+	display: block;
+}
+@media(max-width: 1227px) {
+	.comment-container  {
+		display:inline;
+		min-width:200px;
+	}
+}
+/* Misc UI Elements and Fixes */
+button .post-btn {
+	float: left;
+}
+.rec_articles hr:last-of-type {
+	display:none;
+}
+
+/* Commented out because it looked stupid
+
+.rec_articles {
+	margin:10px;
+}*/
+/* Fixes these elements from sticking to the top of the well */
+img.user-avatar {
+	height: 48px;
+	width: 48px;
+}
+
+/* Set a smaller size */
+span p {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin-right: 10px;
+}
+
+/* Fixes the alignment and font family */
+.mobile-nav-buttons {
+	display: none;
+}
+hr {
+	width: 100%;
+	float: left;
+}
+.center {
+	margin: 0 auto;
+}
+
+/* Make images fit to their div */
+img {
+	height: 100%;
+	width: 100%;
+}
+/*placeholder constant text color */
+input::-webkit-input-placeholder { /* WebKit browsers */
+    color:   #999999 !important;
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #999999 !important;
+   opacity:  1;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #999999 !important;
+   opacity:  1;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #999999 !important;
+}
+/*register submit button */
+.regsubmit {
+	width:100%;
+	padding:5px;
+}
+
+/*register first/last name organize */
+.lastname, .firstname {
+	width:49.7%;
+}
+.lastname {
+	float:right !important;
+}
+.firstname {
+	float:left;
+}
+/* Top navbar float down login/register forms;
+fixed to top navbar */
+.wrapper #alert-container {
+	position: relative;
+	width: auto;
+	margin-top: -75px;
+	float: right;
+	display: block;
+}
+.wrapper #alert-container #alert {
+	border-bottom-left-radius: 5px;
+	-moz-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	-moz-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	width: 100%;
+	height: 100%;
+	margin-top: 30px;
+	background-color: #343434;
+	display: inherit;
+	z-index: -999;
+}
+
+/*register user image file */
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.input-group {
+	margin-top:5px;
+	float:left;
+}
+.input-group-btn {
+    font-size: 0;
+    position: relative;
+    white-space: nowrap;
+
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top:0px;
+    left:0px;
+    min-height: 100%;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+input[readonly] {
+  background-color: white !important;
+  cursor: text !important;
+}
+
+/* Issue in events.js that causes the border to stay there for a short time after the main container is faded away */
+.wrapper #alert-container #alert #login-form {
+	background-color: transparent;
+	display: none;
+	height: 40px;
+	width: 100%;
+	line-height: 25px;
+}
+.wrapper #alert-container #alert #login-form input {
+	margin-left: 5px;
+	margin-top: 5px;
+	height: 30px;
+	border: 0;
+	padding-left: 5px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.wrapper #alert-container #alert #login-form .btn-fix-height {
+	height: 28px;
+	line-height: 15px;
+	margin-top: -3px;
+	padding: 8x;
+	margin-right: 5px;
+}
+.wrapper #alert-container #alert #register-form {
+	background-color: transparent;
+	display: none;
+	height: 200px;
+	width: 100%;
+	line-height: 25px;
+}
+.wrapper #alert-container #alert #login-form {
+	background-color: transparent;
+	display: none;
+	height: 40px;
+	width: 100%;
+	line-height: 25px;
+}
+.content-wrapper .row .col-md-8 #register h1 {
+	float: left;
+	width: auto;
+	font-size: 36px;
+}
+.content-wrapper .row .col-md-8 #register .col-md-12 {
+	display: inline-block;
+}
+.content-wrapper .row .col-md-8 #register h1 small {
+	font-size: 14px;
+	padding-top: 22px;
+	padding-left: 15px;
+}
+.content-wrapper .row .col-md-8 #register input:not(.usrimg) {
+	padding: 5px;
+	border: 1px solid #e3e3e3;
+	margin-top: 5px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.content-wrapper .row .col-md-8 #register .content-wrapper-resize {
+	width: 600px;
+}
+.content-wrapper .row .col-md-12 #article-form {
+	width: 100%;
+}
+.content-wrapper .row .col-md-12 #article-form h1 {
+	font-size: 46px;
+}
+.content-wrapper .row .col-md-12 #article-form h1 small {
+	font-size: 14px;
+	margin-left: 20px;
+}
+.content-wrapper .row .col-md-12 #article-form input,
+.content-wrapper .row .col-md-12 #article-form textarea {
+	width: 100%;
+	padding: 5px;
+	border: 1px solid #e3e3e3;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	margin-top: 10px;
+}
+.content-wrapper .row .col-md-12 #article-form textarea {
+	height: 300px;
+	resize: vertical;
+}
+@media(max-width:1040px) {
+	#art-auth {
+		display: inline-block;
+	}
+	.content-wrapper .row .col-md-12 .article h3 small {
+		position: absolute;
+		display: inline-block;
+		left: 0;
+		padding-left: 0px;
+		margin-top: 5px;
+		padding-top: 40px;
+	}
+}
+@media (max-width:768px) {
+	.content-wrapper .row:last-of-type{
+		margin-bottom: 50px;
+	}
+	#art-auth {
+		display: none;
+	}
+	a.btn {
+		width: 100%;
+	}
+	.content-wrapper .row .col-md-12 .article h3 {
+		position: relative;
+		font-size: 20px;
+		font-weight: bold;
+		width: 100%;
+		margin-right: 0px;
+	}
+	.content-wrapper .row .col-md-12 .article h3 small {
+		position: absolute;
+		display: inline-block;
+		left: 0;
+		padding-left: 0px;
+		margin-top: 5px;
+		padding-top: 25px;
+	}
+	.content-wrapper .row .col-md-12 .article p {
+		font-size: 16;
+		font-weight: 800;
+		margin-right: 0px;
+		margin-top: 10px;
+	}
+	.col-md-4,
+	.col-md-5,
+	.col-md-6,
+	.col-md-7,
+	.col-md-8,
+	.col-md-9,
+	.col-md-10,
+	.col-md-11 {
+		width: 100%
+	}
+	.col-md-1,
+	.col-md-2,
+	.col-md-3 {
+		width: 50%
+	}
+	.navbar-default .navbar-nav {
+		margin-top: -7px;
+		border: 0;
+	}
+	.bootstrap-fix-bkg {
+		display: none;
+	}
+	.mobile-nav-buttons {
+		position: absolute;
+		right: 70px;
+		top: 1px;
+		display: block;
+	}
+	
+	/* Fix stupid buttons from overlapping and causing issues */
+	.navbar-header button {
+		float: right;
+	}
+	.navbar-brand {
+		position: absolute;
+		float: left;
+	}
+	.navbar-collapse {
+		border: none;
+	}
+	.content-wrapper .row .jumbotron p {
+		font-size: 12px;
+	}
+	.comment-wrapper {
+		margin: 0 auto;
+	}
+	.content-wrapper .row .col-md-12 .article .comment-wrapper .post-btn button {
+		float: none;
+		width: 100%;
+		margin-left: 0px;
+	}
+	.content-wrapper .row .col-md-12 .article .comment-wrapper .post-btn button:nth-of-type(2) {
+		margin-top: -10px;
+	}
+	.content-wrapper .row .col-md-12 .article .comment-wrapper .post-btn p {
+		text-indent: 30px;
+		text-align: center;
+		float: none;
+		width: 100%;
+		margin-left: -15px;
+		margin-top: 0px;
+	}
+	.restrict-resize-vertical {
+		resize: all;
+	}
+	hr {
+		display: inline-block;
+	}
+	.content-wrapper .row .col-md-12 .article .comment-wrapper .upvotes {
+		margin: 0 auto;
+		width: auto;
+	}
+	.content-wrapper .row .col-md-12 .article .comment-wrapper .comment-well {
+		float: left;
+		width: 90%;
+		padding: 0;
+	}
+	.content-wrapper .row .col-md-8 #register .content-wrapper-resize {
+		width: 100%
+	}
+	.content-wrapper .row .col-md-8 #register .col-md-6,
+	.content-wrapper .row .col-md-8 #register .col-md-12 {
+		width: 100%;
+	}
+	#dwnv span p,
+	#upv span p {
+		margin-top: 0px;
+	}
+	.navbar-default .navbar-nav > li > .dropdown-menu {
+		border-radius: 0;
+	}
+}
+
+
+/* Correctly align the nav buttons to the right of the fluid-container */
+/*@media (max-width:769px) and (min-width:766px) {
+	.mobile-nav-buttons {
+		position: absolute;
+		float: right;
+		right:10px;
+		display: block;
+	}
+}*/
+
+/* Fix column width @ viewport <= 1000px wide */
+@media (max-width:1000px) {
+	.col-md-4,
+	.col-md-5,
+	.col-md-6,
+	.col-md-7,
+	.col-md-8,
+	.col-md-9,
+	.col-md-10,
+	.col-md-11 {
+		width: 100%;
+	}
+	.col-md-1,
+	.col-md-2,
+	.col-md-3 {
+		width: 50%;
+	}
+}
+
+@media (max-width:350px) {
+	#dwnv,
+	#upv {
+		margin-top: 10px;
+		width: 150px;
+	}
+	#dwnv span p,
+	#upv span p {
+		width: 130px;
+	}
+	/*warning label fix for small resolutions*/
+	.label {
+/*		white-space: normal;
+*/	}
+}
+}
+
+/* Fix register inputs on 16:9 low res systems */
+@media (max-width:1280px) {
+	.content-wrapper .row .col-md-8 #register .col-md-6,
+	.content-wrapper .row .col-md-8 #register .col-md-12 {
+		width: 100%;
+	}
+}
+
+/* Fix small elements on <650px viewports, display all text grouped together, rather than besides parent el, which resulted in text looking like they did not belong together */
+@media (max-width:650px) {
+	small {
+		display: inline-block;
+	}
+	/* author page name break fix */
+	.au_name {
+		font-size:20px;
+	}
+	.au_prof_articles {
+		font-size: 20px;
+	}
+}
+
+/*Author page stuff */
+.profin > img {
+	float:right;
+	padding:10px;
+}
+.au_name {
+	text-align: center;
+}
+@media (max-width:1383px) {
+}
+@media (max-width: 1000px) {
+	.profin.col-sm-3 {
+		width:100%;
+		padding:10px;
+	}
+	.col-md-push-1 {
+		left:0 !important;
+	}
+	.profin > img {
+		display:block;
+		margin:auto;
+		float:none;
+	}
+	.profin > p {
+		display:block;
+		margin: auto;
+	}
+	.au_name {
+		float:none;
+/*		display: inline-block;
+*/	}
+}
+@media (max-width: 250px) {
+	.au_name, .au_prof_articles {
+		font-size: 15px;
+	}
+}
+@media(max-width: 1663px) {
+	.au_ava {
+		margin:0 auto;
+		display:block;
+		float:none;
+	}
+	.profin {
+		text-align: center;
+	}
+	.au_name {
+		margin:0 auto;
+		clear:both;
+	}
+	.profin.col-sm-4 {
+		width:210px;
+	}
+	.profin p {
+		font-size: 16px;
+		margin-right: 0px;
+		margin-top: 10px;
+	}
+	.profin > img {
+		display:block;
+		margin:auto;
+		float:none;
+	}
+	
+}
+
+
+/*changes 1/12/12/ */
+
+.index-article-desc {
+	max-width:100% !important;
+}
+.article, .article > * {
+	max-width:100% !important;
+}
+
+/* changes 1/12/14 */
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+.btn-load-ico {
+	display:none;
+}
+
+.comment-holder{
+	display:block;
+	clear:both;
+	padding:20px;
+}
+
+.content-container {
+	display: inline-block;
+}
+
+.commentpost {
+	background-color:#E7EDED !important;
+	border:none;
+}
+.commentpost hr {
+	border:1px #D9E2E1 solid;
+}

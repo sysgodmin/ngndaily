@@ -1,0 +1,11 @@
+extends layout
+block content
+  link(type="text/css" rel="stylesheet" href="article.css")
+  div.content-wrapper
+    div.row
+      div.col-md-6.jumbotron(id="article", name="article")
+        h1.ttl= title
+        p.article= body
+        p.date= date
+        a.author= author
+    

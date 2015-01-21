@@ -1,0 +1,23 @@
+extends layout
+block content
+  
+  div.content-wrapper
+    div.row
+      if arr.Error
+        .jumbotron
+          h2 No articles to display
+          p
+            small sorry :(
+      else
+        -var a = arr
+        each article in a
+         -var arID = article.THREAD_ID
+         -var artitle = article.THREAD_NAME
+         -var arBody = article.THREAD_CONTENT
+         -var arAuth = article.THREAD_AUTH
+             div.jumbotron.col-md-12
+              a.pull-right(href="/author/"+arAuth)= arAuth
+               h2
+                 a.title(href='/article/'+arID) #{artitle}
+               p.body= arBody.replace(/<\/?[^>]+(>|$)/g, "").replace(/(?:&(?:[A-Za-z_:][\w:.-]*|\#(?:[0-9]+|x[0-9a-fA-F]+));)/gmi, "")
+               span.auth

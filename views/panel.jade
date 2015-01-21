@@ -1,0 +1,14 @@
+extends layout
+block content
+    .content-wrapper
+      .row
+        .jumbotron.col-md-12
+          form#article-form(name='article-form',action="/create", method="post")
+            h1
+              | Write an Article
+              small Write and format your article with Markdown! 
+            input.col-md-12(type='text', name='title',id='title' placeholder='Article Title')
+            textarea.col-md-12(name='body',id='article', placeholder='Article Content')
+            input.col-md-12.form-control(type='text' name='meta' id='meta' placeholder='Category')
+            input.btn.btn-primary.col-md-12(type='submit', value='Submit Article!')
+    script(src="/javascripts/form_veri.js")
