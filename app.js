@@ -82,8 +82,7 @@ var db 		= require('./db'),
         next();
     });
 
-    bouncer.whitelist = [];
-    bouncer.whitelist.push('127.0.0.1');
+    bouncer.whitelist = ['127.0.0.1'];
 
     bouncer.blocked = function(req, res, next, remaining) {
         res.send(403, 'Too many requests. Stop trying to hack kid! ;)')
@@ -102,20 +101,20 @@ var db 		= require('./db'),
         res.redirect('/');
     });
 
-
     //there is a difference between this and comment
     //this just gets the comments for display
     app.post('/comments', routes.getComments);
+
     app.post('/create', routes.create);
     app.post('/authorLogin', bouncer.block, routes.authorLogin);
     app.post('/deleteArticle', utils.checkAuth, routes.deleteArticle);
-    app.post('/signup', multer({
+    app.post('/signup', bouncer.block, multer({
         dest:"./public/images/userprof/",
         rename: function(fieldname, filename) {
             return "ngn_"+utils.keygen(10);
         }
     }), routes.signup);
-    app.post('/comment', routes.comment)
+    app.post('/comment',  bouncer.block, routes.comment)
 
 
 

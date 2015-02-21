@@ -9,6 +9,7 @@ head
   script(type="text/javascript", src="/javascripts/bootstrap.min.js")
   script(type="text/javascript", src="/javascripts/socket.io.js")
   script(type="text/javascript", src="/javascripts/functions.js")
+  script(type="text/javascript", src="/javascripts/jquery_toggle.js")
   block head
 body
  nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
@@ -20,7 +21,7 @@ body
             button#register-btn.btn.btn-primary.pull-right.login-btn(type='button') #{reg.but}
 
         .navbar-header.collapsed
-          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', da ta-target='.navbar-collapse')
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='.navbar-collapse')
             span.sr-only
               Toggle Navigation
             span.icon-bar

@@ -1,14 +1,45 @@
 extends layout
 block content
+    title NGNDaily - Authors panel
     .content-wrapper
       .row
         .jumbotron.col-md-12
-          form#article-form(name='article-form',action="/create", method="post")
+          form#article-form(name='article-form')
+            div.dropdown
+              button.dropdown-toggle#ddmenu(style="border:none; float:right", type="button", data-toggle="dropdown", aria-expanded="true")
+                span.menu_glyph
+              ul.dropdown-menu(style="float:right;",role="menu", aria-labelledby="ddmenu")
+                li(class="dd-select", meta="hidden") 
+                  a(href="#" ) Set hidden flag (only you can see it)
+                li( class="dd-select", meta="perm") 
+                  a(href="#" ) Set permission flag (only authors can see it) 
+                li( class="dd-select", meta="anon") 
+                  a(href="#") Set Anonymous flag (Posted by anonymous) 
             h1
               | Write an Article
-              small Write and format your article with Markdown! 
+              br
+              small Write and format your article with 
+                a(href="http://daringfireball.net/projects/markdown/syntax") Markdown!
+               
             input.col-md-12(type='text', name='title',id='title' placeholder='Article Title')
             textarea.col-md-12(name='body',id='article', placeholder='Article Content')
-            input.col-md-12.form-control(type='text' name='meta' id='meta' placeholder='Category')
-            input.btn.btn-primary.col-md-12(type='submit', value='Submit Article!')
-    script(src="/javascripts/form_veri.js")
+            hr
+            p 
+              h3 Tags: 
+              small Select all that apply
+
+            select.col-md-12.form-control.metas(type='text' name='meta' id='meta' placeholder='Category' multiple)
+              option(value="MMO") MMO
+              option(value="FPS") FPS
+              option(value="MULTIPLAYER") MULTIPLAYER
+              option(value="CLASSIC") CLASSIC
+              option(value="PS4") PS4
+              option(value="XBONE") XBOX ONE
+              option(value="WIIU") WIIU
+              option(value="LASTGEN") LAST GEN
+              option(value="NEXTGEN") NEXT GEN
+            input.col-md-12.form-control(type="text", name="tags", id="tags", placeholder="Tags", readonly)
+            input.col-md-12.form-control(type="checkbox") I wanna be an Author! 
+            input.btn.btn-primary.col-md-12.submit-article(type='submit', value='Submit Article!')
+    script(src="/javascripts/panelFunc.js")
+

@@ -1,9 +1,8 @@
 var marked 	= require('marked'),
 	db		= require('./db'),
-	fs 		= require('fs');
-
-function util () {};
-util.prototype.keygen = function (max) {
+	fs 		= require('fs'),
+	util 	= {};
+util.keygen = function (max) {
 	var str = "abcdefghijklmnopqrstuvwxyz0987654321ABCDEFGHIJKLMNOPQRSTUVWXYZ",
 		res = "";
 	for (var i = 0; i < max; i++ ) {
@@ -14,7 +13,7 @@ util.prototype.keygen = function (max) {
 	}
 	return res;
 }
-util.prototype.checkAuth = function(req,res,next) {
+util.checkAuth = function(req,res,next) {
 	if(!req.session.logged_in) {
 		res.send('You are not authorized to view this page');
 	} else {
@@ -27,13 +26,17 @@ util.prototype.checkAuth = function(req,res,next) {
 *   replace THREAD_CONTENT after being markedowned 
 *	trim THREAD_CONTENT to 250 characters
 * * * * * * * * * * * * * * * * * * * * * * * * * */
-util.prototype.display = function (rows) {
-	var arr = [];
+util.display = function (rows) {
+	var arr 	= [], trim = "", obj = {};
 	for( var i = rows.length; i >= 0; i-- ) {
+
 		if (typeof rows[i] !== 'undefined') {
-			rows[i].THREAD_CONTENT = marked(rows[i].THREAD_CONTENT)
+			obj = rows[i].flags || {hidden:false, perm:false, anon:false};
+			console.log(obj)
+			rows[i].THREAD_CONTENT = marked(rows[i].THREAD_CONTENT);
+
 			if(rows[i].THREAD_CONTENT.length >= 250) {
-				var trim = rows[i].THREAD_CONTENT.trunc(250);
+				trim = rows[i].THREAD_CONTENT.trunc(250);
 				rows[i].THREAD_CONTENT = trim;
 			}
 			arr.push(rows[i]);	
@@ -50,7 +53,7 @@ util.prototype.display = function (rows) {
 *	just takes a string and formats it
 *	to be added to db as an id with '-'
 * * * * * * * * * * * * * * * * * * * */
-util.prototype.IdFromTitle = function(title) {
+util.IdFromTitle = function(title) {
 	var split = title.trunc(100).split(' '), newTitle = '';
 	for(var i = 0, j = split.length; i < j; i++) {
 		if (typeof split[i] !== 'undefined') {
@@ -65,7 +68,7 @@ util.prototype.IdFromTitle = function(title) {
 *	takes email string, matches it to 
 *	regex to confirm it looks like an email
 * * * * * * * * * * * * * * * * * * * * * */
-util.prototype.process = function(email, pass) {
+util.process = function(email, pass) {
 		var emReg = /^.+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 		if(!emReg.test(email)) {
 			error.errors.push("Email not valid")
@@ -73,4 +76,15 @@ util.prototype.process = function(email, pass) {
 		}
 		return true;
 }
-module.exports = new util();
+/*
+ *	
+ *
+ *
+ *
+ *									*/
+util.categoryFilter = function() {
+
+
+
+}
+module.exports = util;

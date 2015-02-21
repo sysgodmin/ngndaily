@@ -1,6 +1,6 @@
 extends layout  
 block content
-  .content-wrapper
+  .content-fluid
     .row
       .jumbotron.col-md-8.col-md-push-2
         form#register(name='register' method="POST" action="/signup" enctype="multipart/formdata")
@@ -20,6 +20,9 @@ block content
                   input#imglol.usrimg.imgfile(type='file' name="img")
               input.usrimg.imgval.form-control(type="text" readonly)
             br
+            div.wantAuthor.input-group.chkbox-contain.col-md-12
+              input(type="checkbox")
+              small(style="margin-left:5px;") I want to be an author!
             button.btn.btn-primary.regsubmit.col-md-12(type='submit', value='Create Account' style="margin-top:5px") Create Account
               span.glyphicon.glyphicon-refresh.glyphicon-refresh-animate.btn-load-ico(style="margin-left:10px")
   script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js")

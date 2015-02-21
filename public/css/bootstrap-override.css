@@ -28,6 +28,7 @@ html {
 	color:#727B84;
 	font-family:"SourceSansPro-Light";
 }
+
 /* Page logo */
 .logo {
 	width:30px;
@@ -51,12 +52,12 @@ h2, h3 {
 }
 /* Wrap out content so it's centered. */
 .wrapper,
-.content-wrapper,
-.content-wrapper .row .col-md-8 #register .content-wrapper-resize {
+.content-fluid,
+.content-fluid .row .col-md-8 #register .content-fluid-resize {
 	margin: 0 auto;
-	width: 50%;
+	width: 75%;
 }
-.content-wrapper {
+.content-fluid {
 	margin-top: 50px;
 	background-color: transparent;
 	padding-left: 15px;
@@ -173,26 +174,26 @@ universally */
 
 /* Save some space */
 /* Information Elements */
-.content-wrapper .row .jumbotron .wip ul li {
+.content-fluid .row .jumbotron .wip ul li {
 	margin-top: 5px;
 }
 
 /* Give a good margin to informational list elements */
 /* Article Elements,
 includes comment and interaction well */
-.content-wrapper .row .col-md-12 .article {
+.content-fluid .row .col-md-12 .article {
 	position: relative;
 	padding:20px;
 }
 
 /* Fit to content */
-.content-wrapper .row .col-md-12 .article .article-header {
+.content-fluid .row .col-md-12 .article .article-header {
 	width: 100%;
 	float: left;
 }
 
 /* Align the article header so the article body fits correctly below */
-.content-wrapper .row .col-md-12 .article h3 {
+.content-fluid .row .col-md-12 .article h3 {
 	position: relative;
 	float: left;
 	font-size: 36px;
@@ -201,7 +202,7 @@ includes comment and interaction well */
 }
 
 /* Need a decent header font size */
-.content-wrapper .row .col-md-12 .article h3 small {
+.content-fluid .row .col-md-12 .article h3 small {
 	float: right;
 	font-size: 12px;
 	padding-top: 22px;
@@ -209,57 +210,57 @@ includes comment and interaction well */
 }
 
 /* Align this correctly to the bottom of the h3 element */
-.content-wrapper .row .col-md-12 .article .media a {
+.content-fluid .row .col-md-12 .article .media a {
 	padding-top: 30px;
 }
 
 /* Align this to the bottom of media-object img */
-.content-wrapper .row .col-md-12 .article .article-wrapper {
+.content-fluid .row .col-md-12 .article .article-wrapper {
 	float: left;
 	width:100%;
 
 }
 
 /* Where the actual article content will go */
-.content-wrapper .row .col-md-12 .article .media {
+.content-fluid .row .col-md-12 .article .media {
 	position: relative;
 	margin-right: 0;
 }
 
 /* The media-object element for user avatar and name */
-.content-wrapper .row .col-md-12 .article .comment-wrapper,
-.content-wrapper .row .col-md-12 .article .comment-container {
+.content-fluid .row .col-md-12 .article .comment-wrapper,
+.content-fluid .row .col-md-12 .article .comment-container {
 	float: left;
 	width: 100%;
 }
 
 /* Same as the article header,
 basically. */
-.content-wrapper .row .col-md-12 .article .comment-wrapper .comment-container .restrict-resize-vertical {
+.content-fluid .row .col-md-12 .article .comment-wrapper .comment-container .restrict-resize-vertical {
 	resize: vertical;
 }
 
 /* Restrict form resizing to vertical only */
-.content-wrapper .row .col-md-12 .article .comment-wrapper .comment-well {
+.content-fluid .row .col-md-12 .article .comment-wrapper .comment-well {
 	float: left;
 	width: 95%;
 }
 
 /* Comment container element */
-.content-wrapper .row .col-md-12 .article .comment-wrapper .comment-write {
+.content-fluid .row .col-md-12 .article .comment-wrapper .comment-write {
 	float: left;
 	height: 150px;
 	width: 100%;
 }
 
 /* Comment text input */
-.content-wrapper .row .col-md-12 .article .comment-wrapper .post-btn button {
+.content-fluid .row .col-md-12 .article .comment-wrapper .post-btn button {
 	margin-right: 5px;
 	margin-left: 5px;
 }
 
 /* Fix text collision */
-.content-wrapper .row .col-md-12 .article .comment-wrapper .upvotes button {
+.content-fluid .row .col-md-12 .article .comment-wrapper .upvotes button {
 	text-align: left;
 	height: 30px;
 	padding: 5px;
@@ -270,37 +271,37 @@ basically. */
 }
 
 /* Redesign upvote/downvote buttons */
-.content-wrapper .row .col-md-12 .article .comment-wrapper .upvotes .btn-success {
+.content-fluid .row .col-md-12 .article .comment-wrapper .upvotes .btn-success {
 	border: 1px solid #4CAE4C;
 }
 
 /* Fix button borders */
-.content-wrapper .row .col-md-12 .article .comment-wrapper .upvotes .btn-danger {
+.content-fluid .row .col-md-12 .article .comment-wrapper .upvotes .btn-danger {
 	border: 1px solid #AC2925;
 }
 
 /* Fix button borders */
-.content-wrapper .row .col-md-12 .article .comment-wrapper .upvotes span p {
+.content-fluid .row .col-md-12 .article .comment-wrapper .upvotes span p {
 	margin-left: -15px;
 	font-size: 12px;
 }
 
 /* Fix span positioning on buttons */
 /* Article Fonts */
-.content-wrapper .row .col-md-12 .article .article-wrapper h1 {
+.content-fluid .row .col-md-12 .article .article-wrapper h1 {
 	font-size: 24px;
 	word-wrap: break-word;
 }
-.content-wrapper .row .col-md-12 .article .article-wrapper h2 {
+.content-fluid .row .col-md-12 .article .article-wrapper h2 {
 	font-size: 20px;
 }
-.content-wrapper .row .col-md-12 .article .article-wrapper h3 {
+.content-fluid .row .col-md-12 .article .article-wrapper h3 {
 	font-size: 18px;
 }
-.content-wrapper .row .col-md-12 .article .article-wrapper h4 {
+.content-fluid .row .col-md-12 .article .article-wrapper h4 {
 	font-size: 16px;
 }
-.content-wrapper .row .col-md-12 .article .article-wrapper p {
+.content-fluid .row .col-md-12 .article .article-wrapper p {
 	font-size: 16px;
 	font-weight: 200;
 	text-indent: 30px;
@@ -308,7 +309,7 @@ basically. */
 	word-wrap: break-word;
 
 }
-.content-wrapper .row .col-md-12 .article .comment-wrapper .post-btn p {
+.content-fluid .row .col-md-12 .article .comment-wrapper .post-btn p {
 	text-indent: 0px;
 	text-align: center;
 	display: inline-block;
@@ -514,20 +515,20 @@ input[readonly] {
 	width: 100%;
 	line-height: 25px;
 }
-.content-wrapper .row .col-md-8 #register h1 {
+.content-fluid .row .col-md-8 #register h1 {
 	float: left;
 	width: auto;
 	font-size: 36px;
 }
-.content-wrapper .row .col-md-8 #register .col-md-12 {
+.content-fluid .row .col-md-8 #register .col-md-12 {
 	display: inline-block;
 }
-.content-wrapper .row .col-md-8 #register h1 small {
+.content-fluid .row .col-md-8 #register h1 small {
 	font-size: 14px;
 	padding-top: 22px;
 	padding-left: 15px;
 }
-.content-wrapper .row .col-md-8 #register input:not(.usrimg) {
+.content-fluid .row .col-md-8 #register input:not(.usrimg) {
 	padding: 5px;
 	border: 1px solid #e3e3e3;
 	margin-top: 5px;
@@ -535,21 +536,21 @@ input[readonly] {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 }
-.content-wrapper .row .col-md-8 #register .content-wrapper-resize {
+.content-fluid .row .col-md-8 #register .content-fluid-resize {
 	width: 600px;
 }
-.content-wrapper .row .col-md-12 #article-form {
+.content-fluid .row .col-md-12 #article-form {
 	width: 100%;
 }
-.content-wrapper .row .col-md-12 #article-form h1 {
+.content-fluid .row .col-md-12 #article-form h1 {
 	font-size: 46px;
 }
-.content-wrapper .row .col-md-12 #article-form h1 small {
+.content-fluid .row .col-md-12 #article-form h1 small {
 	font-size: 14px;
 	margin-left: 20px;
 }
-.content-wrapper .row .col-md-12 #article-form input,
-.content-wrapper .row .col-md-12 #article-form textarea {
+.content-fluid .row .col-md-12 #article-form input,
+.content-fluid .row .col-md-12 #article-form textarea {
 	width: 100%;
 	padding: 5px;
 	border: 1px solid #e3e3e3;
@@ -558,7 +559,7 @@ input[readonly] {
 	-webkit-border-radius: 5px;
 	margin-top: 10px;
 }
-.content-wrapper .row .col-md-12 #article-form textarea {
+.content-fluid .row .col-md-12 #article-form textarea {
 	height: 300px;
 	resize: vertical;
 }
@@ -566,7 +567,7 @@ input[readonly] {
 	#art-auth {
 		display: inline-block;
 	}
-	.content-wrapper .row .col-md-12 .article h3 small {
+	.content-fluid .row .col-md-12 .article h3 small {
 		position: absolute;
 		display: inline-block;
 		left: 0;
@@ -576,7 +577,7 @@ input[readonly] {
 	}
 }
 @media (max-width:768px) {
-	.content-wrapper .row:last-of-type{
+	.content-fluid .row:last-of-type{
 		margin-bottom: 50px;
 	}
 	#art-auth {
@@ -585,14 +586,14 @@ input[readonly] {
 	a.btn {
 		width: 100%;
 	}
-	.content-wrapper .row .col-md-12 .article h3 {
+	.content-fluid .row .col-md-12 .article h3 {
 		position: relative;
 		font-size: 20px;
 		font-weight: bold;
 		width: 100%;
 		margin-right: 0px;
 	}
-	.content-wrapper .row .col-md-12 .article h3 small {
+	.content-fluid .row .col-md-12 .article h3 small {
 		position: absolute;
 		display: inline-block;
 		left: 0;
@@ -600,7 +601,7 @@ input[readonly] {
 		margin-top: 5px;
 		padding-top: 25px;
 	}
-	.content-wrapper .row .col-md-12 .article p {
+	.content-fluid .row .col-md-12 .article p {
 		font-size: 16;
 		font-weight: 800;
 		margin-right: 0px;
@@ -646,21 +647,21 @@ input[readonly] {
 	.navbar-collapse {
 		border: none;
 	}
-	.content-wrapper .row .jumbotron p {
+	.content-fluid .row .jumbotron p {
 		font-size: 12px;
 	}
 	.comment-wrapper {
 		margin: 0 auto;
 	}
-	.content-wrapper .row .col-md-12 .article .comment-wrapper .post-btn button {
+	.content-fluid .row .col-md-12 .article .comment-wrapper .post-btn button {
 		float: none;
 		width: 100%;
 		margin-left: 0px;
 	}
-	.content-wrapper .row .col-md-12 .article .comment-wrapper .post-btn button:nth-of-type(2) {
+	.content-fluid .row .col-md-12 .article .comment-wrapper .post-btn button:nth-of-type(2) {
 		margin-top: -10px;
 	}
-	.content-wrapper .row .col-md-12 .article .comment-wrapper .post-btn p {
+	.content-fluid .row .col-md-12 .article .comment-wrapper .post-btn p {
 		text-indent: 30px;
 		text-align: center;
 		float: none;
@@ -674,20 +675,20 @@ input[readonly] {
 	hr {
 		display: inline-block;
 	}
-	.content-wrapper .row .col-md-12 .article .comment-wrapper .upvotes {
+	.content-fluid .row .col-md-12 .article .comment-wrapper .upvotes {
 		margin: 0 auto;
 		width: auto;
 	}
-	.content-wrapper .row .col-md-12 .article .comment-wrapper .comment-well {
+	.content-fluid .row .col-md-12 .article .comment-wrapper .comment-well {
 		float: left;
 		width: 90%;
 		padding: 0;
 	}
-	.content-wrapper .row .col-md-8 #register .content-wrapper-resize {
+	.content-fluid .row .col-md-8 #register .content-fluid-resize {
 		width: 100%
 	}
-	.content-wrapper .row .col-md-8 #register .col-md-6,
-	.content-wrapper .row .col-md-8 #register .col-md-12 {
+	.content-fluid .row .col-md-8 #register .col-md-6,
+	.content-fluid .row .col-md-8 #register .col-md-12 {
 		width: 100%;
 	}
 	#dwnv span p,
@@ -711,7 +712,7 @@ input[readonly] {
 }*/
 
 /* Fix column width @ viewport <= 1000px wide */
-@media (max-width:1000px) {
+@media (max-width:1383px) {
 	.col-md-4,
 	.col-md-5,
 	.col-md-6,
@@ -721,6 +722,7 @@ input[readonly] {
 	.col-md-10,
 	.col-md-11 {
 		width: 100%;
+
 	}
 	.col-md-1,
 	.col-md-2,
@@ -745,11 +747,10 @@ input[readonly] {
 */	}
 }
 }
-
 /* Fix register inputs on 16:9 low res systems */
 @media (max-width:1280px) {
-	.content-wrapper .row .col-md-8 #register .col-md-6,
-	.content-wrapper .row .col-md-8 #register .col-md-12 {
+	.content-fluid .row .col-md-8 #register .col-md-6,
+	.content-fluid .row .col-md-8 #register .col-md-12 {
 		width: 100%;
 	}
 }
@@ -766,22 +767,38 @@ input[readonly] {
 	.au_prof_articles {
 		font-size: 20px;
 	}
+
+	p > small {
+		font-size:9px;
+	}
+	ul {
+		font-size: 9px;
+		padding-left:20px;
+	}
+	.jumbotron {
+		padding:30px;
+	}
+	p > small, small {
+		font-size:50% !important;
+	}
 }
 
 /*Author page stuff */
 .profin > img {
 	float:right;
 	padding:10px;
-}
-.au_name {
 	text-align: center;
 }
-@media (max-width:1383px) {
+.au_name {
 }
-@media (max-width: 1000px) {
+
+@media (max-width: 1275px) {
 	.profin.col-sm-3 {
 		width:100%;
-		padding:10px;
+		padding:80px;
+	}
+	.auth-articles {
+		width:100%;
 	}
 	.col-md-push-1 {
 		left:0 !important;
@@ -790,6 +807,11 @@ input[readonly] {
 		display:block;
 		margin:auto;
 		float:none;
+		max-width:256px;
+		max-height:256px;
+		min-width:32px;
+		min-height:32px;
+
 	}
 	.profin > p {
 		display:block;
@@ -879,4 +901,80 @@ input[readonly] {
 }
 .commentpost hr {
 	border:1px #D9E2E1 solid;
+}
+
+/*1/21/2015*/
+@media(max-width:515px) {
+	.profin {
+		padding:20px !important;
+		width:auto;
+	}
+	h3 {
+		font-size:15px;
+	}
+}
+.au_prof_articles {
+	text-align: center !important;
+}
+
+
+/* 2/6/15 3:25am */
+
+/* Author form menu glyph */
+.menu_glyph {
+	background-image:url(glyph/drawing.png);
+	background-size: 100% 100%;
+	float:right !important;
+	width:32px;
+	height:32px;
+
+	padding:0px !important;
+}
+.menu_glyph:hover {
+	background-image:url(glyph/drawing_hover.png);
+	background-size: 100% 100%;
+	float:right;
+	width:32px;
+	height:32px;
+
+}
+
+#ddmenu {
+	padding:0px;
+}
+
+
+/* Author panel dropdown menu */
+.panel-drop {
+	float:right;
+	background-color:#CCD9D8;
+}
+
+/* it is now 5:11am.. */
+
+#article-form .dropdown-menu {
+	border-radius:0;
+	position:relative !important;
+	background-color: #D1DCDB;
+	height:100%;
+	padding:2px;
+
+	color:#F3F3F1 !important;
+
+}
+
+/* it is now 9:21am :)) */ 
+
+
+/* 2/13/15 I am fucking pumped */
+
+.wantAuthor > input {
+
+	width:auto !important;
+	height:auto;
+}
+.wantAuthor {	
+	width:100%;
+	height:auto;
+	float:left;
 }

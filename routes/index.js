@@ -79,9 +79,8 @@ exports.index = function(req, res) {
             //Not really necessary but whatever
 
             var articles = utils.display(row);
-            console.log(articles);
             res.render('index', {
-                maintitle: 'Gaming\'s most honest entity!',
+                maintitle: 'The most honest entity in gaming!',
                 secondtitle: 'Honest reporting on today\'s most popular games and technology!',
                 mainbtn: 'Find out more',
                 mainbtnlink: '/about',
@@ -99,7 +98,7 @@ exports.about = function(req, res) {
         '__NGNDaily__ is a tech-journalism site, dedicated to self-integrity and\n',
         'open discussion, for all the latest gaming and tech news!'
     ],  authors = [
-        '__NGN Daily__ is a no-nonsense (maybe except jokes), no-bullshit gaming news website.',
+        '__NGN Daily__ is a no-nonsense (don\'t hold us to this), no-bullshit gaming news website.',
         'and some code. ',
         '<br/>Founded during the aftermath of the \'Gamergate\' saga by Brandon and James on October 2014,',
         ' we aim to deliver non-politically influenced game and tech articles.',
@@ -128,7 +127,20 @@ exports.write = function(req, res) {
 
 /** ## GET ## **/
 exports.categories = function (req, res) {
-    res.send(marked("__aayyy__"));
+
+    function categ(rows) {
+        var cat = rows[0];
+        console.log(rows)
+        if (typeof cat !== 'undefined') {
+
+            console.log(cat);
+        }
+
+    }
+    db.query("SELECT * FROM ngn_CATEGORIES", function (err,row,field) {
+        categ(row);
+        res.render('categories');
+    });
 }
 exports.articles = function(req, res) {
 
@@ -163,7 +175,6 @@ exports.articles = function(req, res) {
                     return;
                 }
                 var r = h(row);
-                console.log(r)
                 res.render('article',r)
                 
             });
@@ -235,22 +246,30 @@ exports.getComments = function(req,res) {
 
 /** ## POST ## **/
 
+//** ## CREATE ## **//
 
+//#Categories (not sure how I should do this still) //
+//#Have set categories and selection list? ()
+//
 exports.create = function(req, res) {
     var date = new Date();
-    db.query("INSERT INTO Threads(THREAD_NAME, THREAD_ID, THREAD_DATE, THREAD_CONTENT, THREAD_AUTH, THREAD_CATEG) VALUES(" +
+    db.query("INSERT INTO Threads(THREAD_NAME, THREAD_ID, THREAD_DATE, THREAD_CONTENT, THREAD_AUTH, THREAD_CATEG, flags) VALUES(" +
         mysql.escape(req.body.title) + "," +
         mysql.escape(utils.IdFromTitle(req.body.title)) + "," +
         mysql.escape(date.toJSON()) + "," +
         mysql.escape(req.body.body) + "," +
         mysql.escape(req.session.author) + "," +
-        mysql.escape(req.body.meta) + ");",
+        mysql.escape(req.body.meta) +"," + 
+        mysql.escape(JSON.parse(req.body.flags)) + ")",
         function(err, row, field) {
             if (!err) {
-                res.redirect('/');
+                res.send(true);
                 return;
             } else {
                 console.log(err);
+                res.send({
+                    error: "Could not post article"
+                });
                 return;
             }
         });
@@ -260,7 +279,6 @@ exports.create = function(req, res) {
 exports.signup = function(req, res) {
   console.log(req.files)
   console.log(req.body)
-
   var info = req.body;
    //callback hell but whatever 
    db.query('SELECT * FROM Authors WHERE AUTH_HANDLE = '+ info.handle.dbEsc()+' OR AUTH_EMAIL = '+info.email.dbEsc(), function(err, row) {

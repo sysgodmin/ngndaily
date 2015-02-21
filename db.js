@@ -8,26 +8,29 @@ var mysql = require('mysql');
 	};
 	connection = mysql.createConnection(db_conf);
 
-function db_handler (err) {
-	connection.connect(function(err) {
-	if (err) {
-		console.log('error connecting to mysql ', err);
-		setTimeout(db_handler, 2000);
-	}
-	})
-	connection.on('error', function(err) {
-		console.log('db error', err);
-		db_handler();
-	});
+function replaceClientOnDisconnect(client) {
+  client.on("error", function (err) {
+    if (!err.fatal) {
+      return;
+    }
+ 
+    if (err.code !== "PROTOCOL_CONNECTION_LOST") {
+      throw err;
+    }
+ 
+    client = mysql.createConnection(client.config);
+    replaceClientOnDisconnect(client);
+    connection.connect(function (error) {
+      if (error) {
+        // Well, we tried. The database has probably fallen over.
+        // That's fairly fatal for most applications, so we might as
+        // call it a day and go home.
+        process.exit(1);
+      }
+    });
+  });
 }
-db_handler();
-//periodically test connection
-(function testMySQL() {
-	connection.query("SELECT 1", function(err,row) {
-		if (err) throw err;
-	});
-	setTimeout(function(){
-		testMySQL();
-	},30000)
-})
+ 
+// And run this on every connection as soon as it is created.
+replaceClientOnDisconnect(connection);
 module.exports = connection;
